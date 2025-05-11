@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Financial Automation</title>
+  <link rel="stylesheet" href="incomeStatment.css">
+</head>
+<body>
+  <header>
+    <h1>Business Financial Automation</h1>
+    <nav>
+      <button id="income-btn">Income Statement</button>
+      <button id="balance-btn">Balance Sheet</button>
+      <button id="cashflow-btn">Cash Flow Statement</button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Income Statement Section -->
+    <section id="income-section" class="hidden">
+      <h2>X COMPANY</h2>
+      <h2>Income Statement</h2>
+      <h4>For the period ending: <input type="date" id="reporting-period"></h4>
+      <h3>Revenue</h3>
+      <div id="revenue-list">
+        <input type="text" placeholder="Revenue Item Name">
+        <input type="number" placeholder="Amount (USD)" class="revenue-item">
+      </div>
+      <button type="button" id="add-revenue-item">Add Revenue Item</button>
+      <p><strong>Total Revenue:</strong> $<span id="total-revenue">0</span></p>
+
+      <h3>Cost of Goods Sold (COGS)</h3>
+      <label>Beginning Inventory:</label>
+      <div id="beginning-inventory-list">
+        <input type="text" placeholder="Inventory Item Name">
+        <input type="number" placeholder="Amount (USD)" class="beginning-inventory-item">
+      </div>
+      <button type="button" id="add-beginning-inventory-item">Add Inventory Item</button>
+      <label>Purchases:</label>
+      <input type="number" id="purchases" placeholder="Amount (USD)">
+      <label>Ending Inventory:</label>
+      <input type="number" id="ending-inventory" placeholder="Amount (USD)">
+      <p><strong>Total COGS:</strong> $<span id="total-cogs">0</span></p>
+
+      <h3>Gross Margin</h3>
+      <p><strong>Gross Margin:</strong> $<span id="gross-margin">0</span></p>
+
+      <h3>Expenses</h3>
+      <h4>Operating Expenses</h4>
+      <div id="op-exp-list">
+        <input type="text" placeholder="Expense Item Name">
+        <input type="number" placeholder="Amount (USD)" class="op-exp-item">
+      </div>
+      <button type="button" id="add-op-exp-item">Add Operating Expense</button>
+      <p><strong>Total Operating Expenses:</strong> $<span id="total-op-exp">0</span></p>
+
+      <h4>Non-Operating Expenses</h4>
+      <div id="non-op-exp-list">
+        <input type="text" placeholder="Expense Item Name">
+        <input type="number" placeholder="Amount (USD)" class="non-op-exp-item">
+      </div>
+      <button type="button" id="add-non-op-exp-item">Add Non-Operating Expense</button>
+      <p><strong>Total Non-Operating Expenses:</strong> $<span id="total-non-op-exp">0</span></p>
+
+      <h4>Total Expenses</h4>
+      <p><strong>Total Expenses (Operating + Non-Operating):</strong> $<span id="total-expenses">0</span></p>
+
+      <h3>Operating Income Before Tax</h3>
+      <p><strong>Operating Income Before Tax:</strong> $<span id="operating-income-before-tax">0</span></p>
+
+      <h3>Tax</h3>
+      <div id="tax-list">
+        <input type="text" placeholder="Tax Item Name">
+        <input type="number" placeholder="Percentage (%)" class="tax-item">
+      </div>
+      <button type="button" id="add-tax-item">Add Tax Item</button>
+      <p><strong>Total Tax:</strong> $<span id="total-tax">0</span></p>
+
+      <h3>Net Income/Loss</h3>
+      <p><strong>Net Income/Loss:</strong> $<span id="net-income">0</span></p>
+    </section>
+
+    <!-- Balance Sheet Section -->
+    <section id="balance-section" class="hidden">
+      <h2>X Company</h2>
+      <h2>Balance Sheet</h2>
+      <h4>As of: <input type="date" id="reporting-period"></h4>
+      <h3>Assets</h3>
+      <h4>Current Assets</h4>
+      <div id="current-assets-list">
+        <input type="text" placeholder="Asset Name">
+        <input type="number" placeholder="Amount (USD)" class="current-asset-item">
+      </div>
+      <button type="button" id="add-current-asset-item">Add Current Asset</button>
+      <p><strong>Total Current Assets:</strong> $<span id="total-current-assets">0</span></p>
+
+      <h4>Fixed Assets</h4>
+      <div id="fixed-assets-list">
+        <input type="text" placeholder="Asset Name">
+        <input type="number" placeholder="Amount (USD)" class="fixed-asset-item">
+      </div>
+      <button type="button" id="add-fixed-asset-item">Add Fixed Asset</button>
+      <p><strong>Total Fixed Assets:</strong> $<span id="total-fixed-assets">0</span></p>
+      <p><strong>Total Assets:</strong> $<span id="total-assets">0</span></p>
+
+      <h3>Liabilities</h3>
+      <h4>Current Liabilities</h4>
+      <div id="current-liabilities-list">
+        <input type="text" placeholder="Liability Name">
+        <input type="number" placeholder="Amount (USD)" class="current-liability-item">
+      </div>
+      <button type="button" id="add-current-liability-item">Add Current Liability</button>
+      <p><strong>Total Current Liabilities:</strong> $<span id="total-current-liabilities">0</span></p>
+
+      <h4>Fixed Liabilities</h4>
+      <div id="fixed-liabilities-list">
+        <input type="text" placeholder="Liability Name">
+        <input type="number" placeholder="Amount (USD)" class="fixed-liability-item">
+      </div>
+      <button type="button" id="add-fixed-liability-item">Add Fixed Liability</button>
+      <p><strong>Total Fixed Liabilities:</strong> $<span id="total-fixed-liabilities">0</span></p>
+      <p><strong>Total Liabilities:</strong> $<span id="total-liabilities">0</span></p>
+
+      <h3>Owner's Equity</h3>
+      <label>Common Stock:</label>
+      <input type="number" id="common-stock" placeholder="Amount (USD)">
+      <label>Preferred Stock:</label>
+      <input type="number" id="preferred-stock" placeholder="Amount (USD)">
+      <label>Additional Paid-In Capital:</label>
+      <input type="number" id="additional-capital" placeholder="Amount (USD)">
+      <p><strong>Retained Earnings:</strong> $<span id="retained-earnings">0</span></p>
+      <p><strong>Total Owner's Equity:</strong> $<span id="total-owners-equity">0</span></p>
+    </section>
+
+    <!-- Cash Flow Statement Section -->
+    <section id="cashflow-section" class="hidden">
+      <h2>X Company</h2>
+      <h2>Cash Flow Statement</h2>
+      <h4>For the period ending: <input type="date" id="reporting-period"></h4>
+
+      <h3>1. Operating Activities</h3>
+      <label>Cash received from customers:</label>
+      <input type="number" id="cash-received-customers" placeholder="Amount (USD)">
+      <label>Payments to suppliers:</label>
+      <input type="number" id="payments-suppliers" placeholder="Amount (USD)">
+      <label>Salaries & wages paid:</label>
+      <input type="number" id="salaries-wages-paid" placeholder="Amount (USD)">
+      <label>Rent & utilities:</label>
+      <input type="number" id="rent-utilities" placeholder="Amount (USD)">
+      <label>Taxes paid:</label>
+      <input type="number" id="taxes-paid" placeholder="Amount (USD)">
+      <p><strong>Total Operating Activities:</strong> $<span id="total-operating-activities">0</span></p>
+
+      <h3>2. Investing Activities</h3>
+      <label>Purchase of equipment/property:</label>
+      <input type="number" id="purchase-equipment" placeholder="Amount (USD)">
+      <label>Sale of investments/assets:</label>
+      <input type="number" id="sale-investments" placeholder="Amount (USD)">
+      <label>Research & development expenses:</label>
+      <input type="number" id="rnd-expenses" placeholder="Amount (USD)">
+      <p><strong>Total Investing Activities:</strong> $<span id="total-investing-activities">0</span></p>
+
+      <h3>3. Financing Activities</h3>
+      <label>Loan proceeds received:</label>
+      <input type="number" id="loan-proceeds" placeholder="Amount (USD)">
+      <label>Loan repayments made:</label>
+      <input type="number" id="loan-repayments" placeholder="Amount (USD)">
+      <label>Dividend payments:</label>
+      <input type="number" id="dividend-payments" placeholder="Amount (USD)">
+      <label>Issuance or buyback of stock:</label>
+      <input type="number" id="stock-issuance-buyback" placeholder="Amount (USD)">
+      <p><strong>Total Financing Activities:</strong> $<span id="total-financing-activities">0</span></p>
+
+      <h3>4. Net Cash Flow</h3>
+      <p><strong>Net Cash Flow:</strong> $<span id="net-cashflow">0</span></p>
+
+      <h3>5. Closing Cash Balance</h3>
+      <label>Beginning Cash Balance:</label>
+      <input type="number" id="beginning-cash-balance" placeholder="Amount (USD)">
+      <p><strong>Ending Cash Balance:</strong> $<span id="ending-cash-balance">0</span></p>
+    </section>
+  </main>
+
+  <script src="incomeStatment.js" defer></script>
+</body>
+</html>
